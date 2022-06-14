@@ -1,0 +1,1 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/m1ww06xtvlqiw1j7?svg=true)](https://ci.appveyor.com/project/Plehovevgeny/orderingcarddelivery-selenide)
