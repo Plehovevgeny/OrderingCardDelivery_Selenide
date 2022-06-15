@@ -1,3 +1,4 @@
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -33,7 +34,8 @@ public class OrderingCardDelivery {
         $x("//input[@name=\"phone\"]").val("+79221341234");
         $x("//span[@class=\"checkbox__box\"]").click();
         $x("//span[@class=\"button__text\"]").click();
-        $x("//div[@class=\"notification__title\"]").should(visible, Duration.ofSeconds(15));
+        $(".notification__content")
+                .shouldHave(Condition.text("Встреча успешно забронирована на " + dateOfMeet), Duration.ofSeconds(15));
     }
 
     @Test
@@ -46,7 +48,8 @@ public class OrderingCardDelivery {
         $x("//input[@name=\"phone\"]").val("+79221341234");
         $x("//span[@class=\"checkbox__box\"]").click();
         $x("//span[@class=\"button__text\"]").click();
-        $x("//div[@class=\"notification__title\"]").should(visible, Duration.ofSeconds(15));
+        $(".notification__content")
+                .shouldHave(Condition.text("Встреча успешно забронирована на " + dateOfMeet), Duration.ofSeconds(15));
     }
 
     @Test
